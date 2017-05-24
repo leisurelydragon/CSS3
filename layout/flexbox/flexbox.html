@@ -54,8 +54,12 @@
 				margin: 10px;
 				background-color: goldenrod;
 				/*指定弹性子元素如何分配空间。*/
-				/*语法:flex: auto | initial | none | inherit |  [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]*/
-				flex: 1;
+				/*语法:flex: auto | initial | none | inherit |  [ flex-grow(相对其他子元素扩长) ] || [ flex-shrink ] || [ flex-basis ]*/
+				/*flex-shrink只有子元素的宽度之和大于父元素时才会生效(缩减值)*/
+				flex: 3;
+			}
+			.flex_bigger{
+				flex: 1 2 0;
 			}
 		</style>
 	</head>
@@ -74,7 +78,7 @@
 			<div class="flex_items">11</div>
 		</div>
 		<div class="flex_container flex_less">
-			<div class="flex_flex">1</div>
+			<div class="flex_flex flex_bigger">1</div>
 			<div class="flex_flex">2</div>
 			<div class="flex_flex">3</div>
 			<div class="flex_flex">4</div>
