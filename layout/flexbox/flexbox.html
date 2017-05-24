@@ -4,14 +4,82 @@
 		<meta charset="UTF-8">
 		<title>flexbox(弹性盒子)</title>
 		<style type="text/css">
-			
+			body{
+				/*direction: rtl;*/
+			}
+			.flex_container{/*弹性容器*/
+				width:1000px;
+				height:400px;
+				border: 1px solid lightseagreen;
+				background-color: lightskyblue;
+				margin-left: auto;
+				margin-right: auto;
+				
+							/*%%%%%%%%%%%%%%%%%弹性盒子属性%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+				display: -webkit-flex;
+				display: flex;
+				flex-direction: row-reverse;/*属性值为row、row-reverse、column、column-reverse*/
+				/*内容对齐（justify-content）属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线（main axis）对齐。*/
+				justify-content: space-around;/*属性值[flex-start,flex-end,center,space-between,space-around]*/
+				/*设置或检索弹性盒子元素在侧轴（纵轴）方向上的对齐方式。值设置为stretch时若子元素高度为auto则其会纵向拉伸*/
+				
+			/*%%%%%%%%%%%%%%%%%弹性子元素属性%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/	
+				align-items: center;/*属性值[flex-start,flex-end,center,baseline,stretch]*/
+				/*flex-wrap 属性用于指定弹性盒子的子元素换行方式。*/
+				flex-wrap: wrap-reverse;/*属性值[wrap,nowrap,wrap-reverse]*/
+				/*用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。*/
+				align-content:center;/*属性值[flex-start,flex-end,center,space-between,space-around,stretch]*/
+			}
+			.flex_items{/*弹性子元素*/
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				background-color: greenyellow;
+			}
+			.order{
+				-webkit-order: -1;
+				order: -1;/*修改弹性子元素的排列顺序*/
+			}
+			.flex_items:nth-child(1){
+				/*设置弹性元素自身在侧轴（纵轴）方向上的对齐方式。*/
+				align-self: flex-start;/*属性值[flex-start,flex-end,center,baseline,stretch,auto]*/
+			}
+			.flex_less{
+				width: 500px;
+				margin-top: 40px;
+			}
+			.flex_flex{
+				width: 100px;
+				height: 100px;
+				margin: 10px;
+				background-color: goldenrod;
+				/*指定弹性子元素如何分配空间。*/
+				/*语法:flex: auto | initial | none | inherit |  [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]*/
+				flex: 1;
+			}
 		</style>
 	</head>
 	<body>
-		<div id="flex_container">
-			<div class="flex_items">
-				
-			</div>
+		<div class="flex_container">
+			<div class="flex_items">1</div>
+			<div class="flex_items order">2</div>
+			<div class="flex_items">3</div>
+			<div class="flex_items">4</div>
+			<div class="flex_items">5</div>
+			<div class="flex_items">6</div>
+			<div class="flex_items">7</div>
+			<div class="flex_items">8</div>
+			<div class="flex_items">9</div>
+			<div class="flex_items">10</div>
+			<div class="flex_items">11</div>
+		</div>
+		<div class="flex_container flex_less">
+			<div class="flex_flex">1</div>
+			<div class="flex_flex">2</div>
+			<div class="flex_flex">3</div>
+			<div class="flex_flex">4</div>
+			<div class="flex_flex">5</div>
+			<div class="flex_flex">6</div>
 		</div>
 	</body>
 </html>
