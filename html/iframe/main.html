@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="width: 80vw;height: 250px;border: 1px solid skyblue;">
+		<div style="width: 80%;height: 100px;border: 1px solid lightcoral;"></div>					
+		<iframe id="iframe" src="iframe1.html" width="688" height="100"></iframe>
+		<script>
+			//获取iframe元素中的document对象的方法
+			var document=iframe.contentWindow.document;
+			var doc1=iframe.contentDocument;
+			var doc2=window.frames["iframe"].contentWindow.document;
+			var doc3=window.frames["iframe"].contentDocument;
+		</script>
+	</body>
+</html>
