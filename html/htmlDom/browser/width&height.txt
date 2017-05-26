@@ -1,0 +1,42 @@
+	
+	Window,Document,Element(元素对象),Screen等对象中的宽、高集合汇总及其区别
+	
+	Window:
+			innerHeight,	窗口的文档显示区的高度。
+			innerWidth,		窗口的文档显示区的宽度。
+			outerHeight,	窗口的外部高度，包含工具条与滚动条。
+			outerWidth,		窗口的外部宽度，包含工具条与滚动条。
+			pageXOffset,	当前页面相对于窗口显示区左上角的 X 位置。
+			pageYOffset,	当前页面相对于窗口显示区左上角的 Y 位置。
+			screenX,		相对于屏幕窗口的x坐标
+			screenY,		相对于屏幕窗口的y坐标
+			screenLeft,		相对于屏幕窗口的x坐标
+			screenTop 		相对于屏幕窗口的y坐标
+			
+		其中	screenX和screenLeft是相对于屏幕的坐标
+			pageXOffset是相对于窗口 (浏览器)的坐标
+	Screen:
+			availHeight 屏幕(显示器)的高度（不包括Windows任务栏）
+			availWidth	屏幕(显示器)的宽度（不包括Windows任务栏）
+	
+	
+	Document:
+	
+	
+	Element:
+			clientHeight	在页面上返回内容的可视高度（不包括边框，边距或滚动条）
+			clientWidth		在页面上返回内容的可视宽度（不包括边框，边距或滚动条）
+			offsetHeight	元素的高度包括边框和填充，但不是边距
+			offsetWidth		元素的宽度包括边框和填充，但不是边距
+			offsetLeft		当前元素的相对水平偏移位置的偏移容器
+			offsetTop		当前元素的相对垂直偏移位置的偏移容器
+			scrollHeight	整个元素的高度（包括带滚动条的隐蔽的地方）
+			scrollWidth		元素的整个宽度（包括带滚动条的隐蔽的地方）
+			scrollTop		当前视图中的实际元素的顶部边缘和顶部边缘之间的距离
+			scrollLeft		当前视图中的实际元素的左边缘和左边缘之间的距离
+			
+		tips:
+			clientHeight和clientWidth是元素的高度和宽度、是浏览器相关的(会随着浏览器窗口的变化而变化)
+			offsetleft和offsetTop会随窗口的大小而变化
+			
+			scrollTop和scrollLeft只有在有滚动条时才有效
