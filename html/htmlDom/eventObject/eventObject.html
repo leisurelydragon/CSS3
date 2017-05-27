@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM事件测试</title>
+		<style>
+			.container{
+				padding:15px ;
+				width: 90vw;
+				margin: 50px 5vw;
+				border: 1px solid skyblue;
+				background-color: lightgoldenrodyellow;
+				height: 400px;
+				display: flex;
+				justify-content: space-around;
+			}
+			.item{
+				width: 15vw;
+				height: 200px;
+				border: 1px solid cornflowerblue;
+				/*margin: 5px 15px;*/
+				padding: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="item" id="one">item1111</div>
+			<div class="item">item2222</div>
+			<div class="item">item3333</div>
+			<div class="item">item4444</div>
+		</div>
+		<script>
+			var eleList=document.querySelectorAll(".item");
+			var container=document.getElementsByClassName("container")[0];
+			var eventDom={
+				click:function(i){
+					var returnFun=function(){
+						console.log(this.innerHTML);
+					}
+					return returnFun;
+				}
+			}
+			var obj={
+				name:"test",
+				handleEvent:function(){
+					console.log("this is handleEvent");
+				}
+			}
+			document.onreadystatechange=function(e){
+				var state=e.srcElement.readyState;
+//				console.log(state);
+				if(state="complete"){
+					document.getElementById("one").addEventListener('click',obj,false);
+					/**************%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*********/
+					document.addEventListener('oneating', function (event) {  
+				        console.log(event.mingzi+'，'+event.message);  
+				    }, false);  
+				  
+				    //创建event的对象实例。
+				    var event = document.createEvent('HTMLEvents');//IE下为createEventObject(IE11无此行为)  
+//				    var event=document.createEventObject();
+				    // 3个参数：事件类型，是否冒泡，是否阻止浏览器的默认行为
+				    event.initEvent("oneating", true, true);  
+				    /*属性，随便自己定义*/  
+				    event.mingzi = 'hello,我是李小贱';  
+				    event.message = '我今天24岁';  
+				  
+				    //触发自定义事件oneating
+				    document.dispatchEvent(event);  //主动动触发事件
+//					document.fireEvent('oneating',event);//IE下为此事件(IE11无此行为)
+					
+//					var fireEvent = function(element,event){  
+//				        if (document.createEventObject){  
+//				            // IE浏览器支持fireEvent方法  
+//				            var evt = document.createEventObject();  
+//				            return element.fireEvent('on'+event,evt)  
+//				        }  
+//				        else{  
+//				            // 其他标准浏览器使用dispatchEvent方法  
+//				            var evt = document.createEvent( 'HTMLEvents' );  
+//				            evt.initEvent(event, true, true);  
+//				            return !element.dispatchEvent(evt);  
+//				        }  
+//				    }; 
+					/**************%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*********/
+				//相当于jquery的$(function(){})
+//					bindEventLet();
+//					bindEventObject();
+					container.onmousemove=function(e){
+//						console.log('move');
+					}
+					container.onmouseleave=function(e){
+//						console.log('leave');
+					}
+					container.onmouseenter=function(e){//事件不会向下传递(不会在子元素上触发)
+						console.log(e);
+//						console.log('enter');
+					}
+					container.onmouseout=function(e){//事件会向下传递(在子元素的边界也会触发)
+//						console.log('out');
+					}
+					bindEventClosePkg();
+				}
+			}
+			function bindEventLet(){//用let循环绑定事件
+				for(let i=0;i<eleList.length;i++ ){
+					eleList[i].onclick=function(){
+						console.log(this.innerHTML);
+					}
+				}
+			}
+			function bindEventObject(){//使用对象内部函数绑定
+				for(var j=0;j<eleList.length;j++){
+					eleList[j].onclick=eventDom.click(j);
+				}
+			}
+			function bindEventClosePkg(){//使用闭包的方式
+				for(var k=0;k<eleList.length;k++){
+					eleList[k].onclick=(function(k){
+//						console.log(k)
+						var innerFun=function(){
+							console.log(this.innerHTML);
+						}
+						return innerFun;
+					})(k);
+				}
+			}
+		</script>
+	</body>
+</html>
