@@ -54,5 +54,16 @@
 			<div class="grid-items"></div>
 			<div class="grid-items"></div>
 		</div>
+		<script>
+			var pattern=/Java/g;
+			var text="JavaScript is more fun than Java";
+			var result;
+			while((result=pattern.exec(text))!=null){
+				console.log(
+					"Matched "+result[0]+" at position "+result.index+" ;"+" next search begins at "+pattern.lastIndex
+				);
+				
+			}
+		</script>
 	</body>
 </html>
