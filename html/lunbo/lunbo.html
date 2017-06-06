@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3按钮</title>
+		<style type="text/css">
+			.container{
+				width: 900px;				
+				height: 600px;
+				margin: auto;
+				perspective: 800px;
+			}
+			.stage{
+				position: relative!important;
+				width: 200px;
+				height: 200px;
+				transform-style: preserve-3d;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -100px;				
+				border: 1px solid blue;
+			}
+			.stage:hover{
+				animation: 3s lunbo infinite linear;
+			}
+			@-webkit-keyframes lunbo{
+				0%{transform: rotateY(0deg);}
+				100%{transform: rotateY(360deg);}
+			}
+			@keyframes lunbo{
+				0%{transform: rotateY(0deg);}
+				100%{transform: rotateY(360deg);}
+			}
+			.img{
+				position: absolute;
+				left: 50%;
+				top:50%;
+				margin-top: -50%;
+				margin-left: -50%;	
+			    transform-origin:center center -175px;
+			   /*transform-origin-z 是相对于视点的偏移量*/
+			}
+			.img:nth-child(1){
+				transform:translateZ(175px) rotateY(0deg);
+			}
+			.img:nth-child(2){
+				transform:translateZ(175px) rotateY(60deg);
+			}
+			.img:nth-child(3){
+				transform:translateZ(175px) rotateY(120deg);
+			}
+			.img:nth-child(4){
+				transform:translateZ(175px) rotateY(180deg);
+			}
+			.img:nth-child(5){
+				transform:translateZ(175px) rotateY(240deg);
+			}
+			.img:nth-child(6){
+				transform:translateZ(175px) rotateY(300deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="stage">
+				<img class="img" src="../../img/hu1.jpg" alt="" width="200"  height="200"/>
+				<img class="img" src="../../img/hupo1.jpg" alt="" width="200"  height="200"/>
+				<img class="img" src="../../img/hupo3.jpg" alt="" width="200"  height="200"/>
+				<img class="img" src="../../img/shanshui1.jpg" alt="" width="200"  height="200"/>
+				<img class="img" src="../../img/shanshui2.jpg" alt="" width="200"  height="200"/>
+				<img class="img" src="../../img/shanshui3.jpg" alt="" width="200"  height="200"/>
+			</div>
+		</div>
+	</body>
+</html>
