@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css3按钮</title>
+		<style type="text/css">
+			body{
+				display: grid;
+				grid-template-columns:1fr ;
+				border: 1px solid deepskyblue;
+				background: lightcyan;
+				height: 700px;
+				border-radius: 5px;
+			}
+			.container{
+				display: grid;
+				grid-template-columns:1fr 5fr 1fr;
+				grid-gap:10px;
+				height: 600px;
+				width: 1000px;
+				align-self: center;
+				justify-self:center;
+				justify-content: space-around;
+				border: 1px solid lightblue;
+				padding: 20px;
+				background: #d1f1f1;
+				border-radius: 15px;
+			}
+			.grid-items{
+				align-self: center;
+				height: 300px;
+				border: 1px solid lightsalmon;
+			    background: #afeaea;
+			    border-radius: 11px;
+			}
+			.stage{
+				align-self: center;
+				height: 300px;
+				border: 1px solid lightsalmon;
+				background: ghostwhite;
+				border-radius: 16px;
+				padding: 17px;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="grid-items"></div>
+			<div class="stage">
+				<button></button>
+			</div>
+			<div class="grid-items"></div>
+		</div>
+	</body>
+</html>
