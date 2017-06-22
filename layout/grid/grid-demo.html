@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试grid布局的使用</title>
+		<style type="text/css">
+			#grid_container{
+				/*grid默认是垂直布局*/
+				display: -webkit-inline-grid;
+				display: inline-grid;
+				/*grid-template-rows:50px 100px ;*/
+				grid-template-columns:[test-line-1] 1fr [test-line-2] 2fr 1fr;
+				width: 80vw;
+				margin: 9vw;
+				margin-top: 5px!important;
+				background-color: lightcyan;
+				grid-gap:5px;
+				height: 100px;
+				grid-template-rows: 100px;/*默认只应用到第一行上*/
+				grid-auto-rows: 140px;/*没有显示指定的行的高度*/
+				/*grid-auto-flow:row;网格流的默认方向是横向排列可以改为column(纵向排列)*/
+			}
+			.gird_item{
+				/*grid-area: 2 / 2 / 3 / 3;[grid-row-start],[grid-column-start],[grid-row-end],[grid-column-end]*/
+				background-image: repeating-linear-gradient(135deg,black 15px ,ghostwhite 20px);
+			}
+			/*使用为网格区域命名的方式*/
+			#grid_name_container{
+				width: 80vw;
+				height: 300px;
+				display: grid;
+				grid-gap:5px;/*[grid-row-gap],[grid-column-gap]*/
+				grid-template-areas:"header header" "content slidebar" "footer footer" ;/*使用命名空间*/
+				grid-template-rows: 100px 1fr 50px;
+				grid-template-columns: 1fr 200px;
+				margin: 9vw;
+				margin-top: 35px!important;
+				background-color: #b0b0f7;
+			}
+			.grid_name_item{
+				background-image: 
+					-webkit-repeating-radial-gradient(
+					50% 50%,circle closest-corner,
+					red, yellow 10%, green 15%,
+					cyan 25%,yellow 35%,purple 55%,
+					red 75%,orange 85%,green 95%);
+			}
+			.grid_name_item:nth-child(1){
+				grid-row-start: header;
+				grid-row-end: header;
+				grid-column-start: header;
+				grid-column-end: header;
+			}
+			.grid_name_item:nth-child(2){
+				grid-row:content;
+				grid-column:content;
+			}
+			.grid_name_item:nth-child(3){
+				grid-area:slidebar;
+			}
+			.grid_name_item:nth-child(4){
+				grid-row:footer ;
+				grid-column:footer;
+			}
+			#grid_test{
+				width: 80vw;
+				height: 300px;
+				display: grid;
+				grid-template-columns:1fr 1fr 1fr ;
+				margin: 9vw;
+				margin-top: 25px;
+				grid-row-gap:5px;
+				grid-column-gap:5px;
+			}
+			.grid_test_item{
+				background-color: lightblue;
+			}
+			.grid_test_item:nth-child(1),.grid_test_item:nth-child(2){
+				grid-row-start: 1;
+				grid-column-end: span 2;
+			}
+			.grid_test_item:nth-child(1){
+				grid-column-start: 1;
+				z-index: 1;/*改变层叠顺序，默认之后的会覆盖之前的网格项目*/
+			}
+			.grid_test_item:nth-child(2){
+				grid-column-start: 2;
+				background-color: lightcyan;
+			}
+			.test_scrollbar{
+				width: 80vw;
+				height: 200px;
+				margin: 9vw;
+				overflow: auto;
+				background-color:lightcyan ;
+				border: 1px solid cornflowerblue;
+			}.test_scrollbar::-webkit-scrollbar{
+				width: 10px;
+				height: 10px;
+				border: 1px solid gold;
+				background-color: #f1d1f1;
+			}
+			.test_scrollbar::-webkit-scrollbar-thumb{
+				background-color: purple;
+			}
+			.scrollbar_inner{
+				width: 90vw;
+				height: 300px;
+				background-color: deepskyblue;
+				border: 1px solid brown;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="grid_container">
+			<div class="gird_item"></div>
+			<div class="gird_item"></div>
+			<div class="gird_item"></div>
+			<div class="gird_item"></div>
+			<div class="gird_item"></div>
+			<div class="gird_item"></div>
+		</div>
+		<div id="grid_name_container">
+			<div class="grid_name_item"></div>
+			<div class="grid_name_item"></div>
+			<div class="grid_name_item"></div>
+			<div class="grid_name_item"></div>
+		</div>
+		<div id="grid_test">
+			<div class="grid_test_item">1</div>
+			<div class="grid_test_item">2</div>
+			<div class="grid_test_item"></div>
+			<div class="grid_test_item"></div>
+			<div class="grid_test_item"></div>
+		</div>
+		<div class="test_scrollbar">
+			<div class="scrollbar_inner">
+			</div>
+		</div>
+		<script type="text/javascript">
+			var objectList=document.querySelectorAll('p');
+//			$.each(objectList, function(i,item) {
+//				var strList=item.trim().split(',')
+//			});
+			
+		</script>
+	</body>
+</html>

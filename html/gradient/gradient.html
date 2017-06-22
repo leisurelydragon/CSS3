@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3渐变应用</title>
+		<link rel="stylesheet" href="../../plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<style>
+			#row{
+				height: 50vh;
+				background-color: blue;
+				animation: .5s color infinite linear alternate-reverse;
+			}
+			@-webkit-keyframes color{
+				0%{
+					background:repeating-linear-gradient(45deg,blue 0px,ghostwhite 5px) ;
+				}
+				100%{
+					background:repeating-linear-gradient(45deg,ghostwhite 0px,blue 5px) ;
+				}
+			}
+			@keyframes color{
+				0%{
+					background:repeating-linear-gradient(45deg,blue 0px,ghostwhite 5px) ;
+				}
+				100%{
+					background:repeating-linear-gradient(45deg,ghostwhite 0px,blue 5px) ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="row" class="row">
+				
+			</div>
+		</div>
+	</body>
+</html>
