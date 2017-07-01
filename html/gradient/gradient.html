@@ -5,10 +5,30 @@
 		<title>CSS3渐变应用</title>
 		<link rel="stylesheet" href="../../plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
 		<style>
+			#container{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 400px;
+			}
 			#row{
-				height: 50vh;
-				background-color: blue;
+				margin-top: 33px;
+				height: 81px;
+				width: 81px;
+				/*background-color: orange;*/
 				animation: .5s color infinite linear alternate-reverse;
+				border-width: 27px;
+				border-style: solid;
+				border-image: url(bg.png) ;
+				border-image-slice: 27 fill;
+				/*border-image-outset: 27px;*/
+				border-image-repeat: stretch;
+			}
+			.row:nth-child(2){
+				margin: 40px;
+				width: 81px;
+				height: 81px;
+				background: url(bg.png);
 			}
 			@-webkit-keyframes color{
 				0%{
@@ -29,8 +49,11 @@
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div id="container" class="container">
 			<div id="row" class="row">
+				FF
+			</div>
+			<div class="row">
 				
 			</div>
 		</div>

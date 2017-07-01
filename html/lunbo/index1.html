@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>首页</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="fonts/iconfont.css" />
+    <style type="text/css">
+			.footer{
+				padding: 10px;
+				text-align: center;
+			}
+			.button{
+				text-align: center;
+				vertical-align: middle;
+				padding: 6px 16px;
+				margin: 0px;
+				color: ghostwhite;
+				background-color: lightseagreen;
+				/*box-shadow: 0px 0px 0px 2px red,
+							0px 0px 0px 3px blue;*/
+				letter-spacing: 0.3em;
+				font-size: 16px;
+				font-family: '楷体';
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.button:hover{
+				background-color:deepskyblue;
+			}
+			.header{
+				position: relative;
+				height: 515px;
+				width: 98vw;
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.slider{
+				height: 100%;
+				position: relative;
+				left: 0;
+				top: 0;
+			}
+			.slider_item{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1;
+			}
+			.slider_item:nth-child(1){
+				background: #1b294f;
+				background-size:cover;
+			}
+			.slider_item:nth-child(2){
+				background: #000 no-repeat;
+				background-size:cover;
+			}
+			.slider_item:nth-child(3){
+				background: #eee no-repeat;
+				background-size:cover;
+			}
+			.slider_item:nth-child(4){
+				background: green no-repeat;
+				background-size:cover;
+			}
+			.slider_item:nth-child(5){
+				background: pink no-repeat;
+				background-size:cover;
+			}
+			.slider_item .left_area{
+				position: absolute;
+				top: 30%;
+				left: 100px;
+				display: none;
+			}
+			.slider_item .left_area .p-one{
+				font-size: 40px;
+			    color: #fff;
+			    margin-bottom: 5px;
+			}
+			.slider_item .left_area .p-two{
+				color: #fff;
+			    font-size: 20px;
+			    margin-bottom: 25px;
+			}
+			.slider_item .left_area .p-three{
+				border: 1px solid #eee;
+			    color: #fff;
+			    padding: 7px 25px;
+			    width: 140px;
+			    text-align: center;
+			}
+			.slider_item .right_area{
+				position: absolute;
+				right: 30px;
+				top:20px;
+				display: none;
+			}
+			.dot{
+				margin: 0;
+				padding: 0;
+				width: 98vw;
+				height: 40px;
+				text-align: center;
+				vertical-align: middle;
+				position: absolute;
+			    bottom: 0px;
+			    z-index: 9;
+			}
+			.dot a.dot_item{
+				padding: 10px 0px;
+				cursor: pointer;
+				display: inline-block;
+				color: #333;
+			}
+			.dot a.dot_item i{
+				width: 24px;				
+				height: 4px;
+				margin: 0 5px;
+				background-color: rgba(255,255,255,0.5);
+				display: block;
+			}
+			.cursor{
+				z-index: 2;
+			}
+			.cursor_i{
+				background-color: #ffffff!important;
+			}
+			
+			
+		</style>
+  </head>
+  <body>
+   <!--头部-->
+   
+   <nav class="navbar  heade navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header small-nav">
+	          <button type="button" id="collapse_button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_2" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <!--<a class="navbar-brand" href="http://v3.bootcss.com/examples/starter-template/#">Project name</a>-->
+	          <div class="hdLogo"><a href=""></a></div>
+	        </div>
+	        <div id="navbar" class="collapse navbar-collapse ">
+	          <ul class="nav navbar-nav">
+	            <li class="">
+					<a class="hasChildren" href="#">产品</a>
+					<div class="nav-dropdown-canvas">
+						<ul>
+							<li>
+								<a href="#">培训方案  ></a>
+								<div class="hd-menu-dropdown-item">
+									<ul>
+										<li><a href="#">IT服务认证咨询服务解决方案</a></li>
+										<li><a href="#">IT规划咨询服务</a></li>
+										<li><a href="#">IT运维咨询服务</a></li>
+										<li><a href="#">数据中心规划咨询服务</a></li>
+										<li><a href="#">业务连续性咨询服务 </a></li>
+										<li><a href="#">灾难恢复演练服务解决方案 </a></li>
+										
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="hasChildren" href="#">方案</a>
+					<div class="nav-dropdown-canvas">
+						<ul>
+							<li style="width: 1200px;">
+								<a href="#">方案 ></a>
+								<div class="hd-menu-dropdown-item">
+									<ul>
+										<li><a href="#">IT服务认证咨询服务解决方案</a></li>
+										<li><a href="#">IT规划咨询服务</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="hasChildren" href="#">服务</a>
+					<div class="nav-dropdown-canvas">
+						<ul>
+							<li>
+								<a href="#">服务 ></a>
+								<div class="hd-menu-dropdown-item">
+									<ul style="width: 1200px;">
+										<li><a href="#">IT服务</a></li>
+										<li><a href="#">IT规划咨询服务</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a class="hasChildren" href="#">支持</a>
+				</li>
+				<li>
+					<a class="hasChildren" href="#">动态</a>
+				</li>
+	          </ul>
+	        </div>
+	        <div id="navbar_2" class="collapse" style="margin-left:-15px;margin-right:-15px;">
+	          <ul class="ul_one" style="background-color:#272624;">
+	            <li class="li_one">
+					<a class="hasChildren" data-toggle="collapse" href="#collpase_1">产品</a>
+					<div class="panel-collapse collapse" id="collpase_1">
+						<ul class="collapse-body">
+							<li class="li_two"><a href="#">IT服务认证咨询服务解决方案</a></li>
+							<li class="li_two"><a href="#">IT规划咨询服务</a></li>
+							<li class="li_two"><a href="#">IT运维咨询服务</a></li>
+							<li class="li_two"><a href="#">数据中心规划咨询服务</a></li>
+							<li class="li_two"><a href="#">业务连续性咨询服务 </a></li>
+							<li class="li_two"><a href="#">灾难恢复演练服务解决方案 </a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="li_one">
+					<a class="hasChildren" data-toggle="collapse" href="#collpase_2">方案</a>
+					<div class="panel-collapse collapse" id="collpase_2">
+						<ul class="collapse-body">
+							<li class="li_two"><a href="#">IT服务认证咨询服务解决方案</a></li>
+							<li class="li_two"><a href="#">IT规划咨询服务</a></li>
+							<li class="li_two"><a href="#">IT运维咨询服务</a></li>
+							<li class="li_two"><a href="#">数据中心规划咨询服务</a></li>
+							<li class="li_two"><a href="#">业务连续性咨询服务 </a></li>
+							<li class="li_two"><a href="#">灾难恢复演练服务解决方案 </a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="li_one">
+					<a class="hasChildren" data-toggle="collapse" href="#collpase_3">服务</a>
+				</li>
+				<li class="li_one">
+					<a class="hasChildren" data-toggle="collapse" href="#collpase_4">支持</a>
+				</li>
+				<li class="li_one">
+					<a class="hasChildren" data-toggle="collapse" href="#collpase_5">动态</a>
+				</li>
+	          </ul>
+	        </div>
+	        
+	        <!--登录-->
+			<div class="hdOperation">
+	    			<a href="#" class="hdConsole">控制台</a>
+			</div>
+	      </div>
+	      <div class="hd-nav-bg" style="display: none;"></div>
+	    </nav>
+	<!--banner-->
+	
+<div id="header" class="header">
+	
+			<div id="slider" class="slider">
+				<div class="slider_item">
+					<div class="left_area">
+						<p class="p-one">速邦最新数据震撼上线</p>
+						<p class="p-two">透传性能 极致体验</p>
+						<p class="p-three">了解更多</p>
+					</div>
+					<div class="right_area"><img src="img/banner-right.png"/></div>
+				</div>
+				<div class="slider_item">
+					<div class="left_area">
+						<p class="p-one">速邦最新数据震撼上线</p>
+						<p class="p-two">透传性能 极致体验</p>
+						<p class="p-three">了解更多</p>
+					</div>
+					<div class="right_area"><img src="img/banner-right.png"/></div>
+				</div>
+				<div class="slider_item">
+					<div class="left_area">
+						<p class="p-one">速邦最新数据震撼上线</p>
+						<p class="p-two">透传性能 极致体验</p>
+						<p class="p-three">了解更多</p>
+					</div>
+					<div class="right_area"><img src="img/banner-right.png"/></div>
+				</div>
+				<div class="slider_item">
+					<div class="left_area">
+						<p class="p-one">速邦最新数据震撼上线</p>
+						<p class="p-two">透传性能 极致体验</p>
+						<p class="p-three">了解更多</p>
+					</div>
+					<div class="right_area"><img src="img/banner-right.png"/></div>
+				</div>
+				<div class="slider_item">
+					<div class="left_area">
+						<p class="p-one">速邦最新数据震撼上线</p>
+						<p class="p-two">透传性能 极致体验</p>
+						<p class="p-three">了解更多</p>
+					</div>
+					<div class="right_area"><img src="img/banner-right.png"/></div>
+				</div>
+			</div>
+			<div class="dot">
+				<a class="dot_item" href="javascript:void(0)"><i></i></a>
+				<a class="dot_item" href="javascript:void(0)"><i></i></a>
+				<a class="dot_item" href="javascript:void(0)"><i></i></a>
+				<a class="dot_item" href="javascript:void(0)"><i></i></a>
+				<a class="dot_item" href="javascript:void(0)"><i></i></a>
+			</div>
+		</div>
+		<!--<div id="test" class="footer" style="margin-top: 50px;">
+			<a id="button" role="button" class="button"	onclick="window.clearInterval(interval_slider)">停止</a>
+		</div>-->
+	<!--动态 start-->
+	<div class="mod-wrap cf">
+		<div class="mod-inner">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="advertising-icon">
+							<i class="iconfont icon-big icon-su"></i>
+						</div>
+						<div class="advertising-text">
+							<p class="title">了解速邦</p>
+							<p class="content">专注企业战略规划</p>
+						</div>
+						<h3 class="mobile-advertising-text">了解速邦</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="advertising-icon">
+							<i class="iconfont icon-big icon-anquanzixun"></i>
+						</div>
+						<div class="advertising-text">
+							<p class="title">咨询领域</p>
+							<p class="content">服务信息业务软件</p>
+						</div>
+						<h3 class="mobile-advertising-text">咨询领域</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="advertising-icon">
+							<i class="iconfont icon-big icon-icon1"></i>
+						</div>
+						<div class="advertising-text">
+							<p class="title">业务合作</p>
+							<p class="content">专业权威认证机构</p>
+						</div>
+						<h3 class="mobile-advertising-text">业务合作</h3>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="advertising-icon">
+							<i class="iconfont icon-big icon-mubiao"></i>
+						</div>
+						<div class="advertising-text">
+							<p class="title">目标使命</p>
+							<p class="content">诚信专业快捷尽责</p>
+						</div>
+						<h3 class="mobile-advertising-text">目标使命</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--服务领域-->
+	<div class="mod-wrap-product gary-bg">
+		<!--服务领域title开始-->
+		<div class="mod-inner">
+			<div class="mod-title">
+				<p class="font24 mod-title-txt">速邦的服务生态链 主要的咨询服务领域</p>
+				<p class="mod-title-txt-small font24">速邦咨询服务领域</p>
+				<P>存储、计算、监控、安全...你所需要的一切产品，速邦云均能以业界领先的水平为你提供</P>
+			</div>
+		</div>
+		<!--服务领域title结束-->
+		
+		<!--列表开始-->
+		<div class="">
+			<ul id="cardArea" class="card-area clearfix">
+				<li class="card-item active">
+					<div class="card">
+						<div class="card-title title-even">
+							<div class="card-active-content">
+								<div class="advertising-icon">
+									<i class="iconfont icon-peixun"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">培训认证服务</p>
+									<p class="title-small">安全控制</p>
+								</div>
+							</div>
+							<div class="card-active-small">
+								<div class="advertising-icon">
+									<i class="iconfont icon-peixun"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">培训</p>
+									<p class="title-small">安全控制</p>
+								</div>
+							</div>
+							<div class="card-bg"></div>
+						</div>
+						<div class="card-content content-first bg-e8e8e8">
+							<ul class="content-first-list">
+								<li>权威授权</li>
+								<li>资深讲师</li>
+								<li>精品课程</li>
+								<li>精品课程</li>
+							</ul>
+						</div>
+						<div class="card-content content-second">
+							<ul>
+								<li>
+									<a href="#">
+										<p class="title">权威授权</p>
+										<p class="title-small">速邦专业权威授权</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">资深讲师</p>
+										<p class="title-small">速邦资深讲师内容</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">精品课程</p>
+										<p class="title-small">主要的课程咨询服务领域</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										更多内容>>
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</li>
+				<li class="card-item">
+					<div class="card">
+						<div class="card-title title-even">
+							<div class="card-active-content">
+								<div class="advertising-icon">
+									<i class="iconfont icon-zixun1"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">咨询认证服务</p>
+									<p class="title-small">资质管理</p>
+								</div>
+							</div>
+							<div class="card-active-small">
+								<div class="advertising-icon">
+									<i class="iconfont icon-zixun1"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">咨询</p>
+									<p class="title-small">资质管理</p>
+								</div>
+							</div>
+							<div class="card-bg"></div>
+						</div>
+						<div class="card-content content-first bg-e1e1e1">
+							<ul class="content-first-list">
+								<li>国际经验</li>
+								<li>质量管理</li>
+								<li>多行业经验</li>
+								<li>精细化咨询</li>
+							</ul>
+						</div>
+						<div class="card-content content-second">
+							<ul>
+								<li>
+									<a href="#">
+										<p class="title">权威授权</p>
+										<p class="title-small">速邦专业权威授权</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">资深讲师</p>
+										<p class="title-small">速邦资深讲师内容</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">精品课程</p>
+										<p class="title-small">主要的课程咨询服务领域</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										更多内容>>
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</li>
+				
+				<li class="card-item">
+					<div class="card">
+						<div class="card-title title-even">
+							<div class="card-active-content">
+								<div class="advertising-icon">
+									<i class="iconfont icon-drgspingtairuanjianxitong37"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">平台认证服务</p>
+									<p class="title-small">成熟理论</p>
+								</div>
+							</div>
+							<div class="card-active-small">
+								<div class="advertising-icon">
+									<i class="iconfont icon-drgspingtairuanjianxitong37"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">平台</p>
+									<p class="title-small">成熟理论</p>
+								</div>
+							</div>
+							<div class="card-bg"></div>
+						</div>
+						<div class="card-content content-first bg-e8e8e8">
+							<ul class="content-first-list">
+								<li>EC-OSM ITSM平台</li>
+								<li>EC-MMS监控平台</li>
+								<li>EC-BCM业务连续性</li>
+								<li>绩效管理系统</li>
+							</ul>
+						</div>
+						<div class="card-content content-second">
+							<ul>
+								<li>
+									<a href="#">
+										<p class="title">权威授权</p>
+										<p class="title-small">速邦专业权威授权</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">资深讲师</p>
+										<p class="title-small">速邦资深讲师内容</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">精品课程</p>
+										<p class="title-small">主要的课程咨询服务领域</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										更多内容>>
+									</a>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</li>
+				<li class="card-item">
+					<div class="card">
+						<div class="card-title title-even">
+							<div class="card-active-content">
+								<div class="advertising-icon">
+									<i class="iconfont icon-yunweiguanli"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">运营认证服务</p>
+									<p class="title-small">实战经验</p>
+								</div>
+							</div>
+							<div class="card-active-small">
+								<div class="advertising-icon">
+									<i class="iconfont icon-yunweiguanli"></i>
+								</div>
+								<div class="advertising-title">
+									<p class="title">运营</p>
+									<p class="title-small">实战经验</p>
+								</div>
+							</div>
+							<div class="card-bg"></div>
+						</div>
+						<div class="card-content content-first bg-e1e1e1">
+							<ul class="content-first-list">
+								<li>经验丰富</li>
+								<li>国际认证</li>
+								<li>服务意识</li>
+							</ul>
+						</div>
+						<div class="card-content content-second">
+							<ul>
+								<li>
+									<a href="#">
+										<p class="title">权威授权</p>
+										<p class="title-small">速邦专业权威授权</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">资深讲师</p>
+										<p class="title-small">速邦资深讲师内容</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p class="title">精品课程</p>
+										<p class="title-small">主要的课程咨询服务领域</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										更多内容>>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<!--手机列表开始-->
+			<ul id="mod-cardArea" class="mod-card-area">
+				<li>
+					<a>
+						<div class="product-block">
+							<span class="product-bloc-left"><i class="iconfont icon-peixun"></i>培训</span>
+							<i class="iconfont icon-sanjiao product-bloc-right"></i>
+						</div>
+						<div class="mod-dropdown">
+							<ul>
+								<li>
+									<a href="#">
+										<p>权威授权</p>
+										<p>速邦专业权威授权</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>资深讲师</p>
+										<p>速邦资深讲师内容</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>精品课程</p>
+										<p>主要的课程咨询服务领域</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</a>
+					
+				</li>
+				<li>
+					<a>
+						<div class="product-block">
+							<span class="product-bloc-left"><i class="iconfont icon-zixun1"></i>咨询</span>
+							<i class="iconfont icon-sanjiao product-bloc-right"></i>
+						</div>
+						<div class="mod-dropdown">
+							<ul>
+								<li>
+									<a href="#">
+										<p>国际经验</p>
+										<p>速邦专业权威授权</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a>
+						<div class="product-block">
+							<span class="product-bloc-left"><i class="iconfont icon-drgspingtairuanjianxitong37"></i>平台</span>
+							<i class="iconfont icon-sanjiao product-bloc-right"></i>
+						</div>
+						<div class="mod-dropdown">
+							<ul>
+								<li>
+									<a href="#">
+										<p>EC-OSM ITSM平台</p>
+										<p>速邦专业权威授权</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a>
+						<div class="product-block">
+							<span class="product-bloc-left"><i class="iconfont icon-yunweiguanli"></i>运营</span>
+							<i class="iconfont icon-sanjiao product-bloc-right"></i>
+						</div>
+						<div class="mod-dropdown">
+							<ul>
+								<li>
+									<a>
+										<p>经验丰富</p>
+										<p>速邦专业权威授权</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<!--手机列表结束-->
+		</div>
+		<!--列表结束-->
+	</div>
+	<!--解决方案开始-->
+	<div id="program" class="program">
+		<!--pc列表-->
+		<ul id="program-pc" class="program-pc cf" style="width:4800px;position: relative;left: -1200px;margin: 0;padding: 0;">
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item4.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-zixun"></i></div>
+						<h3 class="item-title">BPM业务管理咨询</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item5.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shibiexing"></i></div>
+						<h3 class="item-title">ITSM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item3.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-server_05-copy-copy-copy"></i></div>
+						<h3 class="item-title">ISMS安全管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item2.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shengtaizuzhitixi"></i></div>
+						<h3 class="item-title">BCM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item1.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-chengchangtixi"></i></div>
+						<h3 class="item-title">CMMI成熟度评估体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item1.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-zixun"></i></div>
+						<h3 class="item-title">BPM业务管理咨询</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item2.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shibiexing"></i></div>
+						<h3 class="item-title">ITSM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item3.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-server_05-copy-copy-copy"></i></div>
+						<h3 class="item-title">ISMS安全管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item4.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shengtaizuzhitixi"></i></div>
+						<h3 class="item-title">BCM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item5.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-chengchangtixi"></i></div>
+						<h3 class="item-title">CMMI成熟度评估体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item4.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-zixun"></i></div>
+						<h3 class="item-title">BPM业务管理咨询</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item5.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shibiexing"></i></div>
+						<h3 class="item-title">ITSM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item3.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-server_05-copy-copy-copy"></i></div>
+						<h3 class="item-title">ISMS安全管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item2.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shengtaizuzhitixi"></i></div>
+						<h3 class="item-title">BCM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item1.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-chengchangtixi"></i></div>
+						<h3 class="item-title">CMMI成熟度评估体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item1.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-zixun"></i></div>
+						<h3 class="item-title">BPM业务管理咨询</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item2.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shibiexing"></i></div>
+						<h3 class="item-title">ITSM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item3.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-server_05-copy-copy-copy"></i></div>
+						<h3 class="item-title">ISMS安全管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item4.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shengtaizuzhitixi"></i></div>
+						<h3 class="item-title">BCM管理体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li class="slide-item">
+				<a>
+				<img  src="img/banner-item5.jpg" />
+				<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-chengchangtixi"></i></div>
+						<h3 class="item-title">CMMI成熟度评估体系</h3>
+						<p class="item-desc">构建企业服务管理体系规范，提升企业服务整体绩效，获取ISO20000国际认证。</p>
+						<span class="item-link">查看详情</span>
+					</div>
+				</div>
+				</a>
+			</li>
+		</ul>
+		<div class="slide-btn-panel left-btn">
+			<button class="slide-btn left-btn" id="left-btn" onclick="to_left();">
+	         	<i class="iconfont icon-sanjiao icon-left"></i>
+	      </button>
+		</div>
+		<div class="slide-btn-panel right-btn">
+			<button class="slide-btn right-btn" id="right-btn" onclick="to_right();">
+	         	<i class="iconfont icon-sanjiao icon-right"></i>
+	      </button>
+		</div>	
+		<!--pc列表结束-->
+		<!--mob列表-->
+		<ul class="program-mob">
+			<li>
+				<a>
+					<div class="ph1"></div>
+					<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-zixun"></i></div>
+						<h3 class="item-title">BPM业务管理咨询</h3>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li>
+				<a>
+					<div class="ph2"></div>
+					<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shibiexing"></i></div>
+						<h3 class="item-title">ITSM管理体系</h3>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li>
+				<a>
+					<div class="ph3"></div>
+					<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-server_05-copy-copy-copy"></i></div>
+						<h3 class="item-title">ISMS安全管理体系</h3>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li>
+				<a>
+					<div class="ph4"></div>
+					<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-shengtaizuzhitixi"></i></div>
+						<h3 class="item-title">BCM管理体系</h3>
+					</div>
+				</div>
+				</a>
+			</li>
+			<li>
+				<a>
+					<div class="ph5"></div>
+					<div class="mask">
+					<div class="bg"></div>
+					<div class="cont">
+						<div class="item-img-panel"><i class="iconfont icon-chengchangtixi"></i></div>
+						<h3 class="item-title">CMMI成熟度评估体系</h3>
+					</div>
+				</div>
+				</a>
+			</li>
+		</ul>
+		<!--mob列表结束-->
+	</div>
+	<!--解决方案结束-->
+	
+	<!--合作伙伴开始-->
+	<div class="mod-wrap-product">
+		<!--合作伙伴title开始-->
+		<div class="mod-inner">
+			<div class="mod-title">
+				<p class="font24 mod-title-txt">速邦专业、可靠的合作伙伴</p>
+				<p class="mod-title-txt-small font24">速邦合作伙伴</p>
+				<P class="partner-title-txt">存储、计算、监控、安全...你所需要的一切产品，速邦云均能以业界领先的水平为你提供</P>
+			</div>
+		</div>
+		<!--合作伙伴title结束-->
+		<div class="partnerLogo cf" id="rank_partner">
+			<ul class="rank_ul" id="rank_ul">
+				<li><img src="img/partner-logo5.png"/></li>
+				<li><img src="img/partner-logo4.png"/></li>
+				<li><img src="img/partner-logo3.png"/></li>
+				<li><img src="img/partner-logo1.png"/></li>
+				<li><img src="img/partner-logo2.png"/></li>
+				<li><img src="img/partner-logo1.png"/></li>
+				<li><img src="img/partner-logo2.png"/></li>
+				<li><img src="img/partner-logo3.png"/></li>
+				<li><img src="img/partner-logo4.png"/></li>
+				<li><img src="img/partner-logo5.png"/></li>
+				<li><img src="img/partner-logo5.png"/></li>
+				<li><img src="img/partner-logo4.png"/></li>
+				<li><img src="img/partner-logo3.png"/></li>
+				<li><img src="img/partner-logo1.png"/></li>
+				<li><img src="img/partner-logo2.png"/></li>
+				<li><img src="img/partner-logo1.png"/></li>
+				<li><img src="img/partner-logo2.png"/></li>
+				<li><img src="img/partner-logo3.png"/></li>
+				<li><img src="img/partner-logo4.png"/></li>
+				<li><img src="img/partner-logo5.png"/></li>
+			</ul>
+			<div class="slide-btn-panel left-btn">
+				<button class="slide-btn left-btn" id="left-btn" onclick="to_left_rank();">
+		         	<i class="iconfont icon-sanjiao icon-left"></i>
+		      </button>
+			</div>
+			<div class="slide-btn-panel right-btn">
+				<button class="slide-btn right-btn" id="right-btn" onclick="to_right_rank()">
+		         	<i class="iconfont icon-sanjiao icon-right"></i>
+		      </button>
+			</div>	
+		</div>
+		
+	</div>
+	
+	<!--地区分布图开始-->
+	<div class="mod-wrap-product deongaree-bg">
+		<!--合作伙伴title开始-->
+		<div class="mod-inner">
+			<div class="mod-title">
+				<p class="font24 mod-title-txt">速邦各区域分布图</p>
+				<p class="mod-title-txt-small font24">速邦各区域分布图</p>
+				<P class="partner-title-txt">SUPER REGIONAL DISTRIBUTION</P>
+			</div>
+		</div>
+		<!--合作伙伴title结束-->
+		<P class="text-center"><br><br><br><br>map<br><br><br><br></P>
+	</div>
+	<!--footer开始-->
+	<div class="footer-website">
+		<div class="footer-columns">
+			<div class="columns">
+				
+			</div>
+		</div>
+	</div>
+	
+   <!-- <script src="js/jquery-1.11.0.js"></script>-->
+    <script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.min.js" ></script>-->
+    <script type="text/javascript" src="js/function.js" ></script>
+    <script>
+    		$(function(){
+    			$("#collapse_button").bind('mouseup',function(){
+    				var check=$("#navbar_2").hasClass('in');
+    				$(".collapse").collapse('hide');
+    			});
+    			$(".heade").mouseover(function(){
+    				$(".heade").addClass("heade-hover");
+    				
+    			});
+    			$(".heade").mouseout(function(){
+    				$(".heade").removeClass("heade-hover");
+    				
+    			});
+    			
+    			
+    				if($(".mod-card-area>li").length!=0){
+			    $(".mod-card-area>li").each(function(e){
+			        var dropdown_menu = $(this).find('.mod-dropdown');
+			        $(this).click(function(){
+			            dropdown_menu.slideToggle();
+			        });
+			
+//			        $(document).mouseup(function(e) {
+//			            if (dropdown_menu.is(":visible") && $(e.target).parents('.mod-card-area>li').length == 0) {
+//			                dropdown_menu.slideUp();
+//			            }
+//			        });
+			    });
+		}
+    			
+    			
+    			
+    			
+    			navbar_li_bindEvent();
+    			//navbar_li_a_mini_bindEvent();
+				foot_i_bindEvent();//绑定鼠标移入和离开事件
+				interval_slider=self.setInterval('lunboBg_foot()',2000);
+    		});
+			var interval_slider;//循环
+			document.querySelector(".slider_item:nth-child(1)").className="slider_item cursor";//默认显示页
+			document.querySelector(".dot .dot_item:nth-child(1) i").className="cursor_i";//默认显示页
+			var sliderItems=document.querySelectorAll('.slider_item');//轮播图父元素
+			var sliderFootI_Items=document.querySelectorAll(".dot .dot_item");//轮播图底部滑条
+			var navbar_ul_list=document.querySelectorAll(".navbar-nav li");//顶部li选项列表
+			var navbar_li_a_mini=document.querySelectorAll('a.hasChildren');//小屏幕下的按钮
+			var MyEvent={//自定义事件对象
+				mouseenter:function(operate_index){
+					var fun_return=function(){
+						window.clearInterval(interval_slider);
+						var now_index=operate_index;
+						moveToSpecifiedFoot(now_index);
+						showOrHideAnimation(now_index,sliderItems);
+					}
+					return fun_return;
+				},
+				mouseleave:function(){
+					var fun_return=function(){
+						interval_slider=self.setInterval('lunboBg_foot()',2000);
+					}
+					return fun_return;
+				},
+				navbar_mouseover:function(index){
+					var return_fun=function(){
+						var now_index=index;
+						navbar_ul_list[now_index].className='active';
+						document.querySelector(".hd-nav-bg").style.display="block";
+					}
+					return return_fun;
+				},
+				navbar_mouseout:function(index){
+					var return_fun=function(){
+						var now_index=index;
+						navbar_ul_list[now_index].className='';
+						document.querySelector(".hd-nav-bg").style.display="none";
+//						for(var i in navbar_ul_list){
+//							if(!parseInt(i+"3")){
+//								break;
+//							}
+//							if(i==now_index){
+//								navbar_ul_list[i].className='';
+//							}
+//						}
+					}
+					return return_fun;
+				},
+				navbar_li_a_mini:function(index){
+					var return_fun=function(){
+						var now_index=index;
+						var now_op_ele=navbar_li_a_mini[now_index];
+						console.log(now_op_ele.parentNode)
+						if($(now_op_ele).parent().attr("class")=="active"){
+							console.log($(now_op_ele).parent()[0]);
+							$(now_op_ele).parent().attr("class","");
+//							$(now_op_ele).next().hide();
+						}else if($(now_op_ele).parent().attr("class")==""){
+							console.log("not_active");
+//							$(now_op_ele).parent()[0].className=="active";
+//							$(now_op_ele).next().show();
+						}
+					}
+					return return_fun;
+				}
+			}
+			
+			function to_left(){
+				var container=document.getElementById("program-pc");
+				var container_left=parseInt(container.style.left);
+				if(container_left==-2400){
+					$(container).animate({"left":"-1200px"},1000);
+				}else{
+					container.style.left="-3600px";
+					$(container).animate({"left":"-2400px"},1000);
+				}
+			}
+			function to_right(){
+				var container=document.getElementById("program-pc");
+				var container_left=parseInt(container.style.left);
+				if(container_left==-1200){
+					$(container).animate({"left":"-2400px"},1000);
+				}else{
+					container.style.left="0px";
+					$(container).animate({"left":"-1200px"},1000);
+				}
+			}
+			function to_left_rank(){
+				
+			}
+			function to_right_rank(){
+				
+			}
+			function navbar_li_a_mini_bindEvent(){
+				for(var i in navbar_li_a_mini){
+					if(!parseInt(i+"3")){
+						break;
+					}
+					navbar_li_a_mini[i].onclick=MyEvent.navbar_li_a_mini(parseInt(i));
+				}
+			}
+			function navbar_li_bindEvent(){//顶部li选项绑定事件
+				for(var i in navbar_ul_list){
+					if(!parseInt(i+"3")){
+						break;
+					}
+					navbar_ul_list[i].onmouseover=MyEvent.navbar_mouseover(parseInt(i));
+					navbar_ul_list[i].onmouseout=MyEvent.navbar_mouseout(parseInt(i));
+				}
+			}
+			function foot_i_bindEvent(){//绑定鼠标移入和离开事件
+				for(var i in sliderItems){
+					if(!parseInt(i+"3")){
+						break;
+					}
+					sliderItems[i].onmousemove=function(){
+						window.clearInterval(interval_slider);
+					}
+					sliderItems[i].onmouseleave=function(){
+						window.interval_slider=self.setInterval('lunboBg_foot()',2000);
+					}
+				}
+				for(var i in sliderFootI_Items){
+					if(!parseInt(i+"3")){
+						break;
+					}
+					sliderFootI_Items[i].onmouseenter=MyEvent.mouseenter(parseInt(i));
+					sliderFootI_Items[i].onmouseleave=MyEvent.mouseleave(parseInt(i));
+				}
+			}
+			
+			function getIndex(child,parent){//获取元素在父元素中的位置
+				for(var i in parent){
+					if(parent[i]==child){
+						return parseInt(i);
+					}
+				}
+			}
+			function getObjectType(obj){//获取元素的类型
+				return Object.prototype.toString.call(obj);
+			}
+			function showOrHideAnimation(an_index,parent){//显示或者隐藏动画元素
+				for(var i in parent){
+					if(!parseInt(i+"12")){
+						break;
+					}
+					var to_op_ele=document.querySelector('.slider_item:nth-child('+(parseInt(i)+1)+') .right_area');
+					var to_op_ele_left=document.querySelector('.slider_item:nth-child('+(parseInt(i)+1)+') .left_area');
+					if(i==an_index){
+						$(to_op_ele).show();
+						$(to_op_ele_left).show();
+						$(to_op_ele).animate({
+							'top':"50px"
+						},2000);
+						$(to_op_ele_left).animate({
+							'left':"50px"
+						},2000);
+					}else{
+						$(to_op_ele).hide();
+						$(to_op_ele_left).hide();
+						to_op_ele.style.top="120px";
+						to_op_ele_left.style.left="100px";
+					}
+				}
+			}
+			function hideOtherItems(index,parent,type){//显示或隐藏轮播图和底部条框
+				for(var i in parent){
+					if(i!=index){	
+						if(getObjectType(parent[i])=="[object Number]"){
+							break;
+						}
+						if(type=="bg_image"){
+							parent[i].className="slider_item";
+						}else if(type=="foot_i"){
+							parent[i].firstChild.className="";
+						}
+					}else{
+						if(type=="bg_image"){
+							parent[i].className="slider_item cursor";
+						}else if(type=="foot_i"){
+							parent[i].firstChild.className="cursor_i";
+						}
+					}
+				}
+			}
+			function moveToSpecifiedFoot(now_index){//轮播到指定背景图(用于底部条框)
+				var to_spe_index_i=now_index;
+				hideOtherItems(to_spe_index_i,sliderItems,'bg_image');
+				hideOtherItems(to_spe_index_i,sliderFootI_Items,'foot_i');
+			}
+			
+			function lunboBg_foot(){//背景和底部条框轮播
+				/*图片轮播*/
+				var now_cursor=document.querySelector('.slider_item.cursor');//滑动图片		
+				var index=getIndex(now_cursor,sliderItems);//当前显示图片索引
+				var to_index;
+				if(index<4){
+					to_index=index+1;
+				}else if(index==4){
+					to_index=0;
+				}
+				hideOtherItems(to_index,sliderItems,'bg_image');
+				/*底部条轮播*/
+				var now_cursor_i=document.querySelector('.dot .dot_item i.cursor_i');//滑动图片	
+				var now_cursor_i_parent=now_cursor_i.parentNode;
+				var index_i=getIndex(now_cursor_i_parent,sliderFootI_Items);//当前显示图片索引
+				var to_index_i;
+				if(index_i<4){
+					to_index_i=index_i+1;
+				}else if(index_i==4){
+					to_index_i=0;
+				}
+				hideOtherItems(to_index_i,sliderFootI_Items,'foot_i');
+				showOrHideAnimation(index_i==4?0:index_i+1,sliderItems);
+			}
+		</script>
+   
+    <script type="text/javascript">
+		$(function() {
+		    $("#cardArea").cardArea()
+		});
+	</script>
+  </body>
+</html>
