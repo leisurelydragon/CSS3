@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>gradient Effect Test</title>
+		<link rel="stylesheet" href="../../plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<script type="text/javascript" src="../../plugins/jquery-3.2.1.js" ></script>
+		<script type="text/javascript" src="../../plugins/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+		<style type="text/css">
+			body{
+				background: #10cccc;
+			}
+			.container{
+				padding: 5px;
+			}
+			ul{
+				list-style-type: none;
+			}
+			li{
+				text-align: center;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: repeating-linear-gradient(45deg,pink 10px,deeppink 20px);
+			}
+			.div_height{
+				height: 300px;
+			}
+			#div1{
+				width: 300px;
+				background-color: lightblue;
+				border: 1px solid lightcyan;
+				background-size: 50px 50px;
+				background-image: linear-gradient(45deg,transparent 0%,lightblue 49%,transparent 50%),
+				                  linear-gradient(90deg,lightblue 0%,black 98%,red 99%);
+			}
+			.ul_list{
+				list-style-type: none;
+			}
+			li.li_item{
+				/*position: relative;*/
+				/*background: #23beec;*/
+				width: 100px;
+				/*color: ghostwhite;*/
+			}
+			li.li_item:hover>ul{
+				display: block;
+			}
+			ul.ul_two{
+				top: 0px;
+				width: 100px;
+				left: 150px;
+				display: none;
+				position: absolute;
+				height: 200px;
+				background-color: lightseagreen;
+			}
+			.li_two:hover>.ul_three{
+				display: block;
+			}
+			.ul_three{
+				position: absolute;
+				left: 100px;
+				top: 0;
+				width: -webkit-calc(40px + 30px*2);
+				height: 100px;
+				display: none;
+				background: blue;
+			}
+			#div4{
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div id="div1" class="col-lg-3 div_height">
+					
+				</div>				
+				<div id="div2" class="col-lg-3 div_height">
+					
+				</div>
+				<div id="div3" class="col-lg-1 div_height">
+					
+				</div>
+				<div id="div4" class="col-lg-4 div_height">
+					<ul class="ul_list">
+						<li class="li_item">
+							测试
+							<ul class="ul_two">
+								<li class="li_two">二级测试
+									<ul class="ul_three">
+										<li>111</li>
+									</ul>
+								</li>
+								<li class="li_two">二级测试
+								<ul class="ul_three">
+										<li>222</li>
+									</ul></li>
+								<li class="li_two">二级测试</li>
+								<li class="li_two">二级测试</li>
+							</ul>
+						</li>
+						<li class="li_item">
+							测试
+							<ul class="ul_two">
+								<li class="li_two">二级测试</li>
+								<li class="li_two">二级测试</li>
+								<li class="li_two">二级测试</li>
+								<li class="li_two">二级测试</li>
+							</ul>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

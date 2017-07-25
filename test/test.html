@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS属性 测试</title>
+		<link rel="stylesheet" href="../plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
+		<script type="text/javascript" src="../plugins/jquery-3.2.1.js" ></script>
+		<script type="text/javascript" src="../plugins/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+		<style>
+			@page:first{/*用于打印元素*/
+				margin: 200px;
+			}
+			::selection{
+				color: gold;
+				background-color: lightcyan;	
+			}
+			input{
+				border-radius:5px ;
+				/*cursor: pointer;*/
+			}
+			input::-webkit-input-placeholder{
+				color: lightseagreen;
+			}
+			button[class*=b]{
+				color: red;
+			}
+			button[class~=a]{
+				color: blue;
+			}
+			button:hover{
+				background-color: purple;
+				box-shadow: 2px 2px 1px 1px blue;
+				transform: rotate(-360deg);
+				transition: all 1s linear;
+			}
+			.row{
+				padding: 25px;
+				margin: 5px;
+				border: 1px solid lightskyblue;
+			}
+			div{
+				border-radius: 10px;
+			}
+			div.a_list{
+				height: 35px;
+				line-height: 35px;
+				border: 1px solid lightcyan;
+			}
+			div.div_list{
+				border: 1px solid lightblue;
+				padding: 5px;
+				margin-top: 10px;
+			}
+			div.div{
+				height: 50px;
+				border: 1px dashed cornflowerblue;
+			}
+			div.div:nth-child(2){
+				border-color: purple;
+			}
+			div.div:nth-child(3){
+				border-color:blue;
+			}
+			div.div:target{
+				height: 50px;
+				border-color: red;
+				/*transition: height 1s linear;*/
+			}
+			ul.ul_list{
+				list-style-type: toggle(disk, circle, square, box);/*子项依次按列表取值*/
+				list-style-type: none;
+			}
+			li.li_li{
+				position: relative;
+				line-height: 55px;
+    			height: 55px;
+    			font-size: 23px;
+    			padding-left: 45px;
+    			background-clip: content-box;
+    			background-color: lightcyan;
+    			margin-top: 5px;
+			}
+			li.li_li:before{
+				border: .3em solid #FFF;
+				font-size: 32px;
+				text-align: center;
+				content: 'F';
+				width: 70px;
+				height: 70px;
+				position: absolute;
+				border-radius: 50%;
+				background-color: lightcyan;
+				top: -7px;
+				left: 0;
+				transition: all 1s linear;
+			}
+			li.li_li:hover:before{
+				transform: rotate(360deg)
+			}
+			
+			ul.counter_list{
+				counter-reset: fir 0;
+				list-style-type: none;
+				list-style-position: outside;
+			}
+			li.counter_li{
+				height: 45px;
+				line-height: 45px;
+				font-size: 35px;
+			}
+			li.counter_li:before{
+				content: counter(fir,upper-roman)'-';
+				counter-increment: fir 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="row">
+			文本
+			<div>33333333333333333333333333333333333333</div>
+			<a class="a">ffff</a>
+			<button class="a b">按钮1</button>
+			<button class="a_b">按钮2</button>
+			<button class="ab">按钮3</button>
+			<button class="a b_c">按钮4</button>
+			<input placeholder="请输入文本" class="input"/>
+		</div>
+		<div class="row">
+			<div class="col-md-12 a_list">
+				<a class="a_head col-md-4" href="#div1">链接1</a>
+				<a class="a_head col-md-4" href="#div2">链接2</a>
+				<a class="a_head col-md-4" href="#div3">链接3</a>
+			</div>
+			<div class="col-md-12 div_list">
+				<div id="div1" class="div col-md-4"></div>
+				<div id="div2" class="div col-md-4"></div>
+				<div id="div3" class="div col-md-4"></div>
+			</div>
+		</div>
+		<div class="row">
+			<ul class="ul_list">
+				<li class="li_li">11111</li>
+				<li class="li_li">22222</li>
+				<li class="li_li">33333</li>
+				<li class="li_li">44444</li>
+			</ul>
+		</div>
+		<div class="row">
+			<ul class="counter_list">
+				<li class="counter_li">测试counter</li>
+				<li class="counter_li">测试counter</li>
+				<li class="counter_li">测试counter</li>
+				<li class="counter_li">测试counter</li>
+				<li class="counter_li">测试counter</li>
+			</ul>
+		</div>
+	</body>
+</html>

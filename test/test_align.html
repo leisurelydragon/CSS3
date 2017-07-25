@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录界面</title>
+    <style>
+        .container{ text-align: center; padding: 120px 0; }
+        .input_label{
+          display: block;
+          width: 80%;
+          text-align: center;
+          margin: auto;
+        }
+        input.input{
+          border-radius: 5px;
+          border: 1px solid cyan;
+          height: 40px;
+          line-height: 40px;
+          width: 100%;
+          font-size: 21px;
+          margin: 20px 0;
+        }
+        button.login{
+          color: ghostwhite;
+          font-size: 21px;
+          background-color: cyan;
+          border-radius: 4px;
+          padding: 3px 8px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <label class="input_label"><input id="userName" class="input" type="text" placeholder="用户名" /></label>
+      <label class="input_label"><input id="passWard" class="input" type="password" placeholder="密码" /></label>
+      <button class="login" type="button" onclick="login();">登录</button>
+    </div>
+    <iframe width="300" height="300" src="test.html"></iframe>
+    <!--<iframe width="300" height="300" src="test.html"></iframe>-->
+    <script type="text/javascript">
+        function login(){
+			var username="username";
+			var password="password";
+			if(username!=password){
+				
+			}
+        }
+    </script>
+</body>
+</html>
